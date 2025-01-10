@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CentrePointController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\SpaceController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/map', [App\Http\Controllers\MapController::class, 'index'])->name('map.index');
 Route::get('/map/{slug}', [App\Http\Controllers\MapController::class, 'show'])->name('map.show');
 
+Route::resource('map', (MapController::class));
 Route::resource('centre-point', (CentrePointController::class));
 Route::resource('space', (SpaceController::class));
 
